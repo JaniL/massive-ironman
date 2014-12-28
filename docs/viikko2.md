@@ -23,7 +23,7 @@ Kuva: https://drive.google.com/open?id=0B-VrTeG8QPOBbFpMSGRKSi13YU0&authuser=0
 Ryhdyin myös selvittämään miten robotti tunnistaisi viivaa ja reagoisi siihen.
 Ensimmäiset testit olivat lupaavia.
 
-Video: [video tulee tähän kun maaseutunetti suostuu puskemaan sen kokonaan]
+Video: https://drive.google.com/open?id=0B-VrTeG8QPOBeTZhQk5Vb3lORzg&authuser=0
 
 Lejosin tarjoama rajapinta on ollut toistaiseksi erittäin helppo ymmärtää.
 Jatkan siis koodin luontia tulevina päivinä.
