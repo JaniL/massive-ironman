@@ -28,4 +28,4 @@ https://drive.google.com/file/d/0B-VrTeG8QPOBeGhwOGRNeEtYQ2c/view?usp=sharing
 
 [video tulossa myöhemmin]
 
-Robotti neliöreitillä: [video tulossa myöhemmin]
+Robotti neliöreitillä: https://drive.google.com/open?id=0B-VrTeG8QPOBZ2N5cnh6MkVCN3M&authuser=0
