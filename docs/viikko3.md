@@ -17,8 +17,11 @@ Ohjelma ei tällä hetkellä ole kuitenkaan täydellinen. DifferentialPlotin par
 ihan päästä heitettyjä arvoja, jonka vuoksi astearvot eivät pidä paikkansa todellisuuden
 kanssa. Tämän takia robotti voi kääntyä tiettyyn suuntaan hyvin jyrkästi ennen kuin se
 tajuaa viivan olevan toisella puolella.
+
 Ohjelman hienosäätö ja refaktorointi ovat nyt työlistalla seuraavana, koska
 ohjelman luonti on tähän asti ollut silkkaa prototyyppailua.
+
+Robotin käännöslogiikassa voisi olla myös parantamisen varaa.
 
 Koska neliöreitissä ei hirveämmin käännytä vasemmalle, päädyin tekemään sille uuden reitin:
 https://drive.google.com/file/d/0B-VrTeG8QPOBeGhwOGRNeEtYQ2c/view?usp=sharing
