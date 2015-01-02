@@ -15,11 +15,14 @@ Mikäli robotti ei löydä viivaa kummaltakaan puolelta, ohjelma sulkeutuu.
 
 Ohjelma ei tällä hetkellä ole kuitenkaan täydellinen. DifferentialPlotin parametreina on
 ihan päästä heitettyjä arvoja, jonka vuoksi astearvot eivät pidä paikkansa todellisuuden
-kanssa. Ohjelman hienosäätö ja refaktorointi ovat nyt työlistalla seuraavana, koska
+kanssa. Tämän takia robotti voi kääntyä tiettyyn suuntaan hyvin jyrkästi ennen kuin se
+tajuaa viivan olevan toisella puolella.
+Ohjelman hienosäätö ja refaktorointi ovat nyt työlistalla seuraavana, koska
 ohjelman luonti on tähän asti ollut silkkaa prototyyppailua.
 
 Koska neliöreitissä ei hirveämmin käännytä vasemmalle, päädyin tekemään sille uuden reitin:
-[kuva]
-[video]
+https://drive.google.com/file/d/0B-VrTeG8QPOBeGhwOGRNeEtYQ2c/view?usp=sharing
 
-Robotti neliöreitillä: [video]
+[video tulossa myöhemmin]
+
+Robotti neliöreitillä: [video tulossa myöhemmin]
