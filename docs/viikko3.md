@@ -26,6 +26,6 @@ Robotin käännöslogiikassa voisi olla myös parantamisen varaa.
 Koska neliöreitissä ei hirveämmin käännytä vasemmalle, päädyin tekemään sille uuden reitin:
 https://drive.google.com/file/d/0B-VrTeG8QPOBeGhwOGRNeEtYQ2c/view?usp=sharing
 
-[video tulossa myöhemmin]
+Video uudesta S-reitistä: https://drive.google.com/open?id=0B-VrTeG8QPOBSjZLTVk1RGpkOG8&authuser=0
 
 Robotti neliöreitillä: https://drive.google.com/open?id=0B-VrTeG8QPOBZ2N5cnh6MkVCN3M&authuser=0
