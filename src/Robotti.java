@@ -31,8 +31,8 @@ public class Robotti {
 		//vasen.setAcceleration(vasen.getAcceleration()/2/2);
 		//oikea.setAcceleration(oikea.getAcceleration()/2/2);
 		
-		//vasen.setSpeed(vasen.getSpeed()/2/2);
-		//oikea.setSpeed(oikea.getSpeed()/2/2);
+		vasen.setSpeed(vasen.getSpeed()/2);
+		oikea.setSpeed(oikea.getSpeed()/2);
 	}
 	
 	/**
@@ -55,6 +55,10 @@ public class Robotti {
 	 * Käynnistää robotin. Robotti ryhtyy kulkemaan viivaa pitkin.
 	 */
 	public void kaynnista() {
+		while (!Button.RIGHT.isDown()) {
+			System.out.println(lightS.getLightValue());
+		}
+		
 		tilasto.setKierrokset(tilasto.getKierrokset()+1);
 		boolean suunta = false;
 		boolean pois = false;
@@ -69,12 +73,18 @@ public class Robotti {
 			
 			moottori.backward();
 			int bleh = 0;
+			int nykyinenTacho = 0;
 			while (moottori.isMoving()) {
 				bleh++;
-				System.out.println(bleh);
-				if (pois == true && lightS.getLightValue() < 50) {
+				int valonArvo = lightS.getLightValue();
+				// System.out.println(valonArvo);
+				
+				
+				
+				if (pois == true && valonArvo < 10) {
 					// moottori.stop();
 					pois = false;
+					System.out.println(pois);
 					
 					moottori.stop(true);
 					
@@ -84,7 +94,43 @@ public class Robotti {
 					break;
 				}
 				
-				if (pois == false && lightS.getLightValue() > 95) {
+				/* if (pois == true && nykyinenTacho < -300) {
+					moottori.stop();
+					nykyinenTacho = 0;
+					
+					moottori.forward();
+					
+					while (moottori.isMoving()) {
+						if (lightS.getLightValue() < 5) {
+							moottori.stop(true);
+							
+							suunta = !suunta;
+							
+							pois = false;
+							
+							break;
+						}
+					}
+				} */
+				
+				/* if (pois == true && valonArvo > 90) {
+					moottori.stop();
+					moottori.forward();
+					
+					while (moottori.isMoving()) {
+						if (lightS.getLightValue() < 5) {
+							moottori.stop(true);
+							
+							suunta = !suunta;
+							
+							pois = false;
+							
+							break;
+						}
+					}
+				} */
+				
+				if (pois == false && valonArvo > 90) {
 					moottori.stop(true);
 					suunta = !suunta;
 					bleh = 0;
@@ -96,11 +142,19 @@ public class Robotti {
 					}
 					
 					pois = true;
+					System.out.println(pois);
+					// moottori.resetTachoCount();
 					
 					
 					
 					break;
 				}
+				
+				/*if (pois == true) {
+					int edellinen = nykyinenTacho;
+					nykyinenTacho = moottori.getTachoCount();
+					System.out.println(nykyinenTacho);
+				} */
 			}
 		}
 		/* boolean staph = false;
