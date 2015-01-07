@@ -16,12 +16,12 @@ public class Kayttoliittyma {
 		this.robotti = robotti;
 	}
 	
-	public void tervetuloIlmoitus() {
+	private void tervetuloIlmoitus() {
 		System.out.println("Viivanseuraaja!");
 		System.out.println();
 	}
 	
-	public void pyydaAlintaArvoa() {
+	private void pyydaAlintaArvoa() {
 		System.out.println("Anna matalin");
 		
 		Button.waitForAnyPress();
@@ -29,7 +29,7 @@ public class Kayttoliittyma {
 		robotti.kalibroiAlinArvo();
 	}
 	
-	public void pyydaKorkeintaArvoa() {
+	private void pyydaKorkeintaArvoa() {
 		System.out.println("Anna korkein");
 		Button.waitForAnyPress();
 		Sound.beep();

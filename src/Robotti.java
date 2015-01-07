@@ -14,13 +14,21 @@ public class Robotti {
 	private LightSensor lightS;
 	private Tilasto tilasto;
 	
+	private boolean staph;
+	private int asteet;
+	private int aste;
+	
 	public Robotti(DifferentialPilot diffP, LightSensor lightS) {
 		this.diffP = diffP;
 		this.lightS = lightS;
 		this.tilasto = new Tilasto();
 		
-		diffP.setTravelSpeed(diffP.getTravelSpeed()*0.25);
-		diffP.setRotateSpeed(diffP.getRotateSpeed()*0.25);
+		diffP.setTravelSpeed(diffP.getTravelSpeed()/2);
+		diffP.setRotateSpeed(diffP.getRotateSpeed()/2);
+		
+		this.staph = false;
+		this.asteet = 0;
+		this.aste = 0;
 	}
 	
 	/**
@@ -44,37 +52,45 @@ public class Robotti {
 	 */
 	public void kaynnista() {
 		tilasto.setKierrokset(tilasto.getKierrokset()+1);
-		boolean staph = false;
-		int asteet = 0;
-		int aste = 10;
+		staph = false;
+		asteet = 0;
+		aste = 10;
 		while (staph != true) {
 			
-			diffP.backward();
+			liiku();
 			
-			while (!Button.ESCAPE.isDown() && lightS.getLightValue() > 60) {
-				diffP.rotate(aste);
-				asteet += aste;
-				
-				tilasto.setKaannokset(tilasto.getKaannokset()+1);
-				if (Math.abs(asteet) == 50) {
-					diffP.rotate(asteet*-1);
-					if (staph == true) {
-						Sound.twoBeeps();
-						System.out.println("Reitti done");
-						return;
-						//diffP.rotate(180);
-						//staph = false;
-					} else {
-						staph = true;
-					}
-					aste = aste*-1;
-					asteet = 0;
-				}
+		}
+	}
+
+	private void liiku() {
+		diffP.backward();
+		
+		while (!Button.ESCAPE.isDown() && lightS.getLightValue() > 60) {
+			kaanny();
+		}
+		
+		asteet = 0;
+		staph = false;
+	}
+
+	private void kaanny() {
+		diffP.rotate(aste);
+		asteet += aste;
+		
+		tilasto.setKaannokset(tilasto.getKaannokset()+1);
+		if (Math.abs(asteet) >= 80) {
+			diffP.rotate(asteet*-1);
+			if (staph == true) {
+				Sound.twoBeeps();
+				System.out.println("Reitti done");
+				return;
+				//diffP.rotate(180);
+				//staph = false;
+			} else {
+				staph = true;
 			}
-			
+			aste = aste*-1;
 			asteet = 0;
-			staph = false;
-			
 		}
 	}
 	
