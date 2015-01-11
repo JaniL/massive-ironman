@@ -55,19 +55,13 @@ public class Kayttoliittyma {
 	 * 
 	 * Käyttöliittymä pyytää käyttäjältä valosensorin korkeimman ja matalimman arvon,
 	 * jonka jälkeen se käynnistää itse robotin.
-	 * 
-	 * Lisäksi tässä myös otetaan käyttöön robotin sammuttaja.
 	 */
 	public void kaynnista() {
 		tervetuloIlmoitus();
 		
 		pyydaKorkeintaArvoa();
 		pyydaAlintaArvoa();
-		
-		RobotinSammuttaja rs = new RobotinSammuttaja();
-		
-		Button.ESCAPE.addButtonListener(rs);
-		
+			
 		LCD.clear();
 		System.out.println("Aloitetaan reitin suorittaminen.");
 		
